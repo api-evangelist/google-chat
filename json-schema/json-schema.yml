@@ -1,0 +1,153 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://raw.githubusercontent.com/api-evangelist/google-chat/refs/heads/main/json-schema/json-schema.yml
+title: Google Chat API Schemas
+description: JSON Schema definitions for the Google Chat API resources.
+type: object
+$defs:
+  Space:
+    type: object
+    title: Chat Space
+    description: A space in Google Chat.
+    properties:
+      name:
+        type: string
+        description: Resource name of the space.
+      type:
+        type: string
+        description: Type of the space.
+        enum: [TYPE_UNSPECIFIED, ROOM, DM, GROUP_CHAT]
+      singleUserBotDm:
+        type: boolean
+        description: Whether the space is a DM between a user and a Chat app.
+      displayName:
+        type: string
+        description: The display name of the space.
+      spaceType:
+        type: string
+        description: The type of the space.
+      spaceThreadingState:
+        type: string
+        description: The threading state of the space.
+      adminInstalled:
+        type: boolean
+        description: Whether the Chat app was installed by an admin.
+  Membership:
+    type: object
+    title: Membership
+    description: A membership in a Chat space.
+    properties:
+      name:
+        type: string
+        description: Resource name of the membership.
+      state:
+        type: string
+        description: State of the membership.
+        enum: [MEMBERSHIP_STATE_UNSPECIFIED, JOINED, INVITED, NOT_A_MEMBER]
+      role:
+        type: string
+        description: Role of the member.
+        enum: [MEMBERSHIP_ROLE_UNSPECIFIED, ROLE_MEMBER, ROLE_MANAGER]
+      member:
+        type: object
+        description: The Google Chat user or app.
+        properties:
+          name:
+            type: string
+          displayName:
+            type: string
+          type:
+            type: string
+            enum: [TYPE_UNSPECIFIED, HUMAN, BOT]
+      createTime:
+        type: string
+        format: date-time
+      deleteTime:
+        type: string
+        format: date-time
+  Message:
+    type: object
+    title: Chat Message
+    description: A message in a Google Chat space.
+    properties:
+      name:
+        type: string
+        description: Resource name of the message.
+      sender:
+        type: object
+        description: The user who created the message.
+        properties:
+          name:
+            type: string
+          displayName:
+            type: string
+          type:
+            type: string
+      createTime:
+        type: string
+        format: date-time
+        description: When the message was created.
+      lastUpdateTime:
+        type: string
+        format: date-time
+        description: When the message was last updated.
+      text:
+        type: string
+        description: Plain-text body of the message.
+      formattedText:
+        type: string
+        description: Rich-text body of the message.
+      thread:
+        type: object
+        description: The thread the message belongs to.
+        properties:
+          name:
+            type: string
+      space:
+        $ref: '#/$defs/Space'
+      argumentText:
+        type: string
+  Reaction:
+    type: object
+    title: Reaction
+    description: A reaction to a message.
+    properties:
+      name:
+        type: string
+        description: Resource name of the reaction.
+      user:
+        type: object
+        properties:
+          name:
+            type: string
+          type:
+            type: string
+      emoji:
+        type: object
+        properties:
+          unicode:
+            type: string
+          customEmoji:
+            type: object
+            properties:
+              uid:
+                type: string
+  Attachment:
+    type: object
+    title: Attachment
+    description: An attachment in a message.
+    properties:
+      name:
+        type: string
+      contentName:
+        type: string
+      contentType:
+        type: string
+      thumbnailUri:
+        type: string
+        format: uri
+      downloadUri:
+        type: string
+        format: uri
+      source:
+        type: string
+        enum: [SOURCE_UNSPECIFIED, DRIVE_FILE, UPLOADED_CONTENT]

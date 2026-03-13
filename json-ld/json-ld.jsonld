@@ -1,0 +1,58 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "chat": "https://chat.googleapis.com/v1/",
+    "goog": "https://developers.google.com/workspace/chat/api/reference/rest/v1/",
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": "schema:url",
+    "provider": "schema:provider",
+    "Space": {
+      "@id": "goog:spaces",
+      "@context": {
+        "name": "schema:identifier",
+        "displayName": "schema:name",
+        "type": "schema:additionalType",
+        "spaceType": "schema:additionalType"
+      }
+    },
+    "Membership": {
+      "@id": "goog:spaces.members",
+      "@context": {
+        "name": "schema:identifier",
+        "state": "schema:status",
+        "role": "schema:roleName",
+        "member": "schema:member",
+        "createTime": "schema:dateCreated"
+      }
+    },
+    "Message": {
+      "@id": "goog:spaces.messages",
+      "@context": {
+        "name": "schema:identifier",
+        "sender": "schema:author",
+        "createTime": "schema:dateCreated",
+        "text": "schema:text",
+        "thread": "schema:isPartOf",
+        "space": "schema:spatial"
+      }
+    },
+    "Reaction": {
+      "@id": "goog:spaces.messages.reactions",
+      "@context": {
+        "name": "schema:identifier",
+        "user": "schema:agent",
+        "emoji": "schema:character"
+      }
+    }
+  },
+  "@type": "WebAPI",
+  "name": "Google Chat API",
+  "description": "The Google Chat API enables building Chat apps for managing spaces, memberships, messages, reactions, and custom emojis.",
+  "url": "https://developers.google.com/workspace/chat/api/guides",
+  "provider": {
+    "@type": "Organization",
+    "name": "Google",
+    "url": "https://developers.google.com"
+  }
+}
