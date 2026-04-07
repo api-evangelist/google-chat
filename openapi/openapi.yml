@@ -15,7 +15,7 @@ paths:
   /v1/spaces:
     get:
       operationId: listSpaces
-      summary: List spaces
+      summary: Google Chat List spaces
       description: Lists spaces the caller is a member of.
       parameters:
         - name: pageSize
@@ -35,7 +35,7 @@ paths:
                 $ref: '#/components/schemas/ListSpacesResponse'
     post:
       operationId: createSpace
-      summary: Create space
+      summary: Google Chat Create space
       description: Creates a named space.
       requestBody:
         content:
@@ -52,7 +52,7 @@ paths:
   /v1/{name}:
     get:
       operationId: getSpace
-      summary: Get space
+      summary: Google Chat Get space
       description: Returns details about a space.
       parameters:
         - name: name
@@ -70,7 +70,7 @@ paths:
                 $ref: '#/components/schemas/Space'
     patch:
       operationId: updateSpace
-      summary: Update space
+      summary: Google Chat Update space
       description: Updates a space.
       parameters:
         - name: name
@@ -96,7 +96,7 @@ paths:
                 $ref: '#/components/schemas/Space'
     delete:
       operationId: deleteSpace
-      summary: Delete space
+      summary: Google Chat Delete space
       description: Deletes a named space.
       parameters:
         - name: name
@@ -110,7 +110,7 @@ paths:
   /v1/spaces:setup:
     post:
       operationId: setupSpace
-      summary: Setup space
+      summary: Google Chat Setup space
       description: Creates a space and adds specified users to it.
       requestBody:
         content:
@@ -134,7 +134,7 @@ paths:
   /v1/{parent}/members:
     get:
       operationId: listMembers
-      summary: List members
+      summary: Google Chat List members
       description: Lists memberships in a space.
       parameters:
         - name: parent
@@ -160,7 +160,7 @@ paths:
                 $ref: '#/components/schemas/ListMembershipsResponse'
     post:
       operationId: createMember
-      summary: Create member
+      summary: Google Chat Create member
       description: Creates a human membership or app membership for a space.
       parameters:
         - name: parent
@@ -183,7 +183,7 @@ paths:
   /v1/{parent}/messages:
     get:
       operationId: listMessages
-      summary: List messages
+      summary: Google Chat List messages
       description: Lists messages in a space.
       parameters:
         - name: parent
@@ -209,7 +209,7 @@ paths:
                 $ref: '#/components/schemas/ListMessagesResponse'
     post:
       operationId: createMessage
-      summary: Create message
+      summary: Google Chat Create message
       description: Creates a message in a Chat space.
       parameters:
         - name: parent
@@ -232,7 +232,7 @@ paths:
   /v1/{parent}/reactions:
     get:
       operationId: listReactions
-      summary: List reactions
+      summary: Google Chat List reactions
       description: Lists reactions to a message.
       parameters:
         - name: parent
@@ -250,7 +250,7 @@ paths:
                 $ref: '#/components/schemas/ListReactionsResponse'
     post:
       operationId: createReaction
-      summary: Create reaction
+      summary: Google Chat Create reaction
       description: Creates a reaction on a message.
       parameters:
         - name: parent
@@ -273,14 +273,14 @@ paths:
   /v1/customEmojis:
     get:
       operationId: listCustomEmojis
-      summary: List custom emojis
+      summary: Google Chat List custom emojis
       description: Lists custom emojis visible to the authenticated user.
       responses:
         '200':
           description: Successful response
     post:
       operationId: createCustomEmoji
-      summary: Create custom emoji
+      summary: Google Chat Create custom emoji
       description: Creates a custom emoji.
       responses:
         '200':
