@@ -14,10 +14,10 @@ specificationVersion: '0.19'
 type: Index
 tags:
   - Chat
-  - Messaging
+  - Collaboration
   - Google
   - Google Workspace
-  - Collaboration
+  - Messaging
   - Spaces
 apis:
   - name: Google Chat API
@@ -42,9 +42,9 @@ apis:
         url: json-ld/json-ld.jsonld
     tags:
       - Chat
+      - Collaboration
       - Messaging
       - Spaces
-      - Collaboration
 common:
   - type: Portal
     url: https://developers.google.com/workspace/chat
