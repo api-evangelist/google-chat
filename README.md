@@ -39,3 +39,5 @@ The Google Chat API v1 provides the following resources:
 ## Maintainers
 
 - **Kin Lane** - kin@apievangelist.com
+
+_Last updated: 2026-04-28_
