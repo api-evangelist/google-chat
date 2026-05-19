@@ -1,0 +1,92 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Chat API — customEmojis
+  description: 'Google Chat API — customEmojis. 2 operations. Lead operation: Google Chat List custom emojis. Self-contained
+    Naftiko capability covering one Google Chat business surface.'
+  tags:
+  - Google Chat
+  - customEmojis
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CHAT_API_KEY: GOOGLE_CHAT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openapi-customemojis
+    baseUri: https://chat.googleapis.com
+    description: Google Chat API — customEmojis business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-customEmojis
+      path: /v1/customEmojis
+      operations:
+      - name: listcustomemojis
+        method: GET
+        description: Google Chat List custom emojis
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createcustomemoji
+        method: POST
+        description: Google Chat Create custom emoji
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: openapi-customemojis-rest
+    port: 8080
+    description: REST adapter for Google Chat API — customEmojis. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/v1/customemojis
+      name: v1-customemojis
+      description: REST surface for v1-customEmojis.
+      operations:
+      - method: GET
+        name: listcustomemojis
+        description: Google Chat List custom emojis
+        call: openapi-customemojis.listcustomemojis
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createcustomemoji
+        description: Google Chat Create custom emoji
+        call: openapi-customemojis.createcustomemoji
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openapi-customemojis-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Chat API — customEmojis. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: google-chat-list-custom-emojis
+      description: Google Chat List custom emojis
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-customemojis.listcustomemojis
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-chat-create-custom-emoji
+      description: Google Chat Create custom emoji
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: openapi-customemojis.createcustomemoji
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,155 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Chat API
+  description: 'Google Chat API. 3 operations. Lead operation: Google Chat Get space. Self-contained Naftiko capability covering
+    one Google Chat business surface.'
+  tags:
+  - Google Chat
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CHAT_API_KEY: GOOGLE_CHAT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openapi-general
+    baseUri: https://chat.googleapis.com
+    description: Google Chat API business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-name
+      path: /v1/{name}
+      operations:
+      - name: getspace
+        method: GET
+        description: Google Chat Get space
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: 'Format: spaces/{space}'
+          required: true
+      - name: updatespace
+        method: PATCH
+        description: Google Chat Update space
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+        - name: updateMask
+          in: query
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+      - name: deletespace
+        method: DELETE
+        description: Google Chat Delete space
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: openapi-general-rest
+    port: 8080
+    description: REST adapter for Google Chat API. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/v1/{name}
+      name: v1-name
+      description: REST surface for v1-name.
+      operations:
+      - method: GET
+        name: getspace
+        description: Google Chat Get space
+        call: openapi-general.getspace
+        with:
+          name: rest.name
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updatespace
+        description: Google Chat Update space
+        call: openapi-general.updatespace
+        with:
+          name: rest.name
+          updateMask: rest.updateMask
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletespace
+        description: Google Chat Delete space
+        call: openapi-general.deletespace
+        with:
+          name: rest.name
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openapi-general-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Chat API. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: google-chat-get-space
+      description: Google Chat Get space
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-general.getspace
+      with:
+        name: tools.name
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-chat-update-space
+      description: Google Chat Update space
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: openapi-general.updatespace
+      with:
+        name: tools.name
+        updateMask: tools.updateMask
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-chat-delete-space
+      description: Google Chat Delete space
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: openapi-general.deletespace
+      with:
+        name: tools.name
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,128 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Chat API — Members
+  description: 'Google Chat API — Members. 2 operations. Lead operation: Google Chat List members. Self-contained Naftiko
+    capability covering one Google Chat business surface.'
+  tags:
+  - Google Chat
+  - Members
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CHAT_API_KEY: GOOGLE_CHAT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openapi-members
+    baseUri: https://chat.googleapis.com
+    description: Google Chat API — Members business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-parent-members
+      path: /v1/{parent}/members
+      operations:
+      - name: listmembers
+        method: GET
+        description: Google Chat List members
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: parent
+          in: path
+          type: string
+          description: 'Format: spaces/{space}'
+          required: true
+        - name: pageSize
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+      - name: createmember
+        method: POST
+        description: Google Chat Create member
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: parent
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: openapi-members-rest
+    port: 8080
+    description: REST adapter for Google Chat API — Members. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/v1/{parent}/members
+      name: v1-parent-members
+      description: REST surface for v1-parent-members.
+      operations:
+      - method: GET
+        name: listmembers
+        description: Google Chat List members
+        call: openapi-members.listmembers
+        with:
+          parent: rest.parent
+          pageSize: rest.pageSize
+          pageToken: rest.pageToken
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createmember
+        description: Google Chat Create member
+        call: openapi-members.createmember
+        with:
+          parent: rest.parent
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openapi-members-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Chat API — Members. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: google-chat-list-members
+      description: Google Chat List members
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-members.listmembers
+      with:
+        parent: tools.parent
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-chat-create-member
+      description: Google Chat Create member
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: openapi-members.createmember
+      with:
+        parent: tools.parent
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
