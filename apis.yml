@@ -43,6 +43,10 @@ apis:
       - Messaging
       - Spaces
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-chat-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-chat-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/googleworkspace
   - type: Portal
