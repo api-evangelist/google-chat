@@ -43,6 +43,8 @@ apis:
       - Messaging
       - Spaces
 common:
+  - type: AgenticAccess
+    url: agentic-access/google-chat-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/google-chat-vulnerability-disclosure.yml
   - type: DomainSecurity
