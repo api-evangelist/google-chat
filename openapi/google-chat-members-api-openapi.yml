@@ -1,0 +1,102 @@
+openapi: 3.1.0
+info:
+  title: Google Chat customEmojis Members API
+  description: The Google Chat API enables building Chat apps that integrate with Google Chat. It provides RESTful access to manage spaces, memberships, messages, reactions, media, and custom emojis.
+  version: v1
+  contact:
+    name: Google
+    url: https://developers.google.com/workspace/chat/api/guides
+servers:
+- url: https://chat.googleapis.com
+tags:
+- name: Members
+paths:
+  /v1/{parent}/members:
+    get:
+      operationId: listMembers
+      summary: Google Chat List members
+      description: Lists memberships in a space.
+      parameters:
+      - name: parent
+        in: path
+        required: true
+        description: 'Format: spaces/{space}'
+        schema:
+          type: string
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+      - name: pageToken
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListMembershipsResponse'
+      tags:
+      - Members
+    post:
+      operationId: createMember
+      summary: Google Chat Create member
+      description: Creates a human membership or app membership for a space.
+      parameters:
+      - name: parent
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Membership'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Membership'
+      tags:
+      - Members
+components:
+  schemas:
+    ListMembershipsResponse:
+      type: object
+      properties:
+        memberships:
+          type: array
+          items:
+            $ref: '#/components/schemas/Membership'
+        nextPageToken:
+          type: string
+    Membership:
+      type: object
+      properties:
+        name:
+          type: string
+        state:
+          type: string
+          enum:
+          - MEMBERSHIP_STATE_UNSPECIFIED
+          - JOINED
+          - INVITED
+          - NOT_A_MEMBER
+        role:
+          type: string
+          enum:
+          - MEMBERSHIP_ROLE_UNSPECIFIED
+          - ROLE_MEMBER
+          - ROLE_MANAGER
+        member:
+          type: object
+          properties:
+            name:
+              type: string
+            type:
+              type: string

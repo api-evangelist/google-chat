@@ -1,0 +1,32 @@
+openapi: 3.1.0
+info:
+  title: Google Chat customEmojis API
+  description: The Google Chat API enables building Chat apps that integrate with Google Chat. It provides RESTful access to manage spaces, memberships, messages, reactions, media, and custom emojis.
+  version: v1
+  contact:
+    name: Google
+    url: https://developers.google.com/workspace/chat/api/guides
+servers:
+- url: https://chat.googleapis.com
+tags:
+- name: customEmojis
+paths:
+  /v1/customEmojis:
+    get:
+      operationId: listCustomEmojis
+      summary: Google Chat List custom emojis
+      description: Lists custom emojis visible to the authenticated user.
+      responses:
+        '200':
+          description: Successful response
+      tags:
+      - customEmojis
+    post:
+      operationId: createCustomEmoji
+      summary: Google Chat Create custom emoji
+      description: Creates a custom emoji.
+      responses:
+        '200':
+          description: Successful response
+      tags:
+      - customEmojis

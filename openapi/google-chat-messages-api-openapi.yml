@@ -1,0 +1,121 @@
+openapi: 3.1.0
+info:
+  title: Google Chat customEmojis Messages API
+  description: The Google Chat API enables building Chat apps that integrate with Google Chat. It provides RESTful access to manage spaces, memberships, messages, reactions, media, and custom emojis.
+  version: v1
+  contact:
+    name: Google
+    url: https://developers.google.com/workspace/chat/api/guides
+servers:
+- url: https://chat.googleapis.com
+tags:
+- name: Messages
+paths:
+  /v1/{parent}/messages:
+    get:
+      operationId: listMessages
+      summary: Google Chat List messages
+      description: Lists messages in a space.
+      parameters:
+      - name: parent
+        in: path
+        required: true
+        description: 'Format: spaces/{space}'
+        schema:
+          type: string
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+      - name: pageToken
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListMessagesResponse'
+      tags:
+      - Messages
+    post:
+      operationId: createMessage
+      summary: Google Chat Create message
+      description: Creates a message in a Chat space.
+      parameters:
+      - name: parent
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Message'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Message'
+      tags:
+      - Messages
+components:
+  schemas:
+    ListMessagesResponse:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/Message'
+        nextPageToken:
+          type: string
+    Space:
+      type: object
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+          enum:
+          - TYPE_UNSPECIFIED
+          - ROOM
+          - DM
+          - GROUP_CHAT
+        singleUserBotDm:
+          type: boolean
+        displayName:
+          type: string
+        spaceType:
+          type: string
+        spaceThreadingState:
+          type: string
+    Message:
+      type: object
+      properties:
+        name:
+          type: string
+        sender:
+          type: object
+          properties:
+            name:
+              type: string
+            type:
+              type: string
+        createTime:
+          type: string
+          format: date-time
+        text:
+          type: string
+        thread:
+          type: object
+          properties:
+            name:
+              type: string
+        space:
+          $ref: '#/components/schemas/Space'
