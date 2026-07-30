@@ -4,7 +4,19 @@ description: >-
   The Google Chat API enables building Chat apps that integrate with Google Chat. It provides RESTful access to manage
   Chat spaces, memberships, messages, reactions, attachments, and custom emojis. The API supports creating
   conversational bots, automating messaging workflows, and managing organizational chat resources programmatically.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/google-chat.png
 url: https://raw.githubusercontent.com/api-evangelist/google-chat/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -18,31 +30,149 @@ tags:
   - Messaging
   - Spaces
 apis:
-  - name: Google Chat API
-    description: >-
-      The Google Chat API provides programmatic access to Google Chat, enabling management of spaces, members, messages,
-      reactions, media attachments, custom emojis, and user notification settings.
-    humanURL: https://developers.google.com/workspace/chat/api/guides
-    baseURL: https://chat.googleapis.com
-    properties:
-      - type: Documentation
-        url: https://developers.google.com/workspace/chat/api/guides
-      - type: OpenAPI
-        url: openapi/openapi.yml
-      - type: Authentication
-        url: https://developers.google.com/workspace/chat/authenticate-authorize
-      - type: GettingStarted
-        url: https://developers.google.com/workspace/chat/quickstart/apps-script
-      - type: JSONSchema
-        url: json-schema/json-schema.yml
-      - type: JSONLD
-        url: json-ld/json-ld.jsonld
-    tags:
-      - Chat
-      - Collaboration
-      - Messaging
-      - Spaces
+- aid: google-chat:google-chat-customemojis-api
+  name: Google Chat customEmojis API
+  description: The customEmojis API from Google Chat — 1 operation(s) for customemojis.
+  humanURL: https://developers.google.com/workspace/chat/api/guides
+  baseURL: https://chat.googleapis.com
+  tags:
+  - customEmojis
+  properties:
+  - type: OpenAPI
+    url: openapi/google-chat-customemojis-api-openapi.yml
+  - type: Documentation
+    url: https://developers.google.com/workspace/chat/api/guides
+  - type: Authentication
+    url: https://developers.google.com/workspace/chat/authenticate-authorize
+  - type: GettingStarted
+    url: https://developers.google.com/workspace/chat/quickstart/apps-script
+  - type: JSONSchema
+    url: json-schema/json-schema.yml
+  - type: JSONLD
+    url: json-ld/json-ld.jsonld
+- aid: google-chat:google-chat-google-chat-api-api
+  name: Google Chat Google Chat API API
+  description: The Google Chat API API from Google Chat — 1 operation(s) for google chat api.
+  humanURL: https://developers.google.com/workspace/chat/api/guides
+  baseURL: https://chat.googleapis.com
+  tags:
+  - Google Chat API
+  properties:
+  - type: OpenAPI
+    url: openapi/google-chat-google-chat-api-api-openapi.yml
+  - type: Documentation
+    url: https://developers.google.com/workspace/chat/api/guides
+  - type: Authentication
+    url: https://developers.google.com/workspace/chat/authenticate-authorize
+  - type: GettingStarted
+    url: https://developers.google.com/workspace/chat/quickstart/apps-script
+  - type: JSONSchema
+    url: json-schema/json-schema.yml
+  - type: JSONLD
+    url: json-ld/json-ld.jsonld
+- aid: google-chat:google-chat-members-api
+  name: Google Chat Members API
+  description: The Members API from Google Chat — 1 operation(s) for members.
+  humanURL: https://developers.google.com/workspace/chat/api/guides
+  baseURL: https://chat.googleapis.com
+  tags:
+  - Members
+  properties:
+  - type: OpenAPI
+    url: openapi/google-chat-members-api-openapi.yml
+  - type: Documentation
+    url: https://developers.google.com/workspace/chat/api/guides
+  - type: Authentication
+    url: https://developers.google.com/workspace/chat/authenticate-authorize
+  - type: GettingStarted
+    url: https://developers.google.com/workspace/chat/quickstart/apps-script
+  - type: JSONSchema
+    url: json-schema/json-schema.yml
+  - type: JSONLD
+    url: json-ld/json-ld.jsonld
+- aid: google-chat:google-chat-messages-api
+  name: Google Chat Messages API
+  description: The Messages API from Google Chat — 1 operation(s) for messages.
+  humanURL: https://developers.google.com/workspace/chat/api/guides
+  baseURL: https://chat.googleapis.com
+  tags:
+  - Messages
+  properties:
+  - type: OpenAPI
+    url: openapi/google-chat-messages-api-openapi.yml
+  - type: Documentation
+    url: https://developers.google.com/workspace/chat/api/guides
+  - type: Authentication
+    url: https://developers.google.com/workspace/chat/authenticate-authorize
+  - type: GettingStarted
+    url: https://developers.google.com/workspace/chat/quickstart/apps-script
+  - type: JSONSchema
+    url: json-schema/json-schema.yml
+  - type: JSONLD
+    url: json-ld/json-ld.jsonld
+- aid: google-chat:google-chat-reactions-api
+  name: Google Chat Reactions API
+  description: The Reactions API from Google Chat — 1 operation(s) for reactions.
+  humanURL: https://developers.google.com/workspace/chat/api/guides
+  baseURL: https://chat.googleapis.com
+  tags:
+  - Reactions
+  properties:
+  - type: OpenAPI
+    url: openapi/google-chat-reactions-api-openapi.yml
+  - type: Documentation
+    url: https://developers.google.com/workspace/chat/api/guides
+  - type: Authentication
+    url: https://developers.google.com/workspace/chat/authenticate-authorize
+  - type: GettingStarted
+    url: https://developers.google.com/workspace/chat/quickstart/apps-script
+  - type: JSONSchema
+    url: json-schema/json-schema.yml
+  - type: JSONLD
+    url: json-ld/json-ld.jsonld
+- aid: google-chat:google-chat-spaces-api
+  name: Google Chat Spaces API
+  description: The Spaces API from Google Chat — 1 operation(s) for spaces.
+  humanURL: https://developers.google.com/workspace/chat/api/guides
+  baseURL: https://chat.googleapis.com
+  tags:
+  - Spaces
+  properties:
+  - type: OpenAPI
+    url: openapi/google-chat-spaces-api-openapi.yml
+  - type: Documentation
+    url: https://developers.google.com/workspace/chat/api/guides
+  - type: Authentication
+    url: https://developers.google.com/workspace/chat/authenticate-authorize
+  - type: GettingStarted
+    url: https://developers.google.com/workspace/chat/quickstart/apps-script
+  - type: JSONSchema
+    url: json-schema/json-schema.yml
+  - type: JSONLD
+    url: json-ld/json-ld.jsonld
+- aid: google-chat:google-chat-spaces-setup-api
+  name: Google Chat Spaces:setup API
+  description: The Spaces:setup API from Google Chat — 1 operation(s) for spaces:setup.
+  humanURL: https://developers.google.com/workspace/chat/api/guides
+  baseURL: https://chat.googleapis.com
+  tags:
+  - Spaces:setup
+  properties:
+  - type: OpenAPI
+    url: openapi/google-chat-spaces-setup-api-openapi.yml
+  - type: Documentation
+    url: https://developers.google.com/workspace/chat/api/guides
+  - type: Authentication
+    url: https://developers.google.com/workspace/chat/authenticate-authorize
+  - type: GettingStarted
+    url: https://developers.google.com/workspace/chat/quickstart/apps-script
+  - type: JSONSchema
+    url: json-schema/json-schema.yml
+  - type: JSONLD
+    url: json-ld/json-ld.jsonld
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/google-chat/overview
   - type: AgenticAccess
     url: agentic-access/google-chat-agentic-access.yml
   - type: VulnerabilityDisclosure
