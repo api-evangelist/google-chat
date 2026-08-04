@@ -1,0 +1,26 @@
+{
+  "provider": "google-chat",
+  "sources": [
+    "google-chat-customemojis-api-openapi.yml",
+    "google-chat-google-chat-api-api-openapi.yml",
+    "google-chat-members-api-openapi.yml",
+    "google-chat-messages-api-openapi.yml",
+    "google-chat-reactions-api-openapi.yml",
+    "google-chat-spaces-api-openapi.yml",
+    "google-chat-spaces-setup-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-chat-customemojis-api-openapi.yml",
+    "google-chat-google-chat-api-api-openapi.yml",
+    "google-chat-members-api-openapi.yml",
+    "google-chat-messages-api-openapi.yml",
+    "google-chat-reactions-api-openapi.yml",
+    "google-chat-spaces-api-openapi.yml",
+    "google-chat-spaces-setup-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

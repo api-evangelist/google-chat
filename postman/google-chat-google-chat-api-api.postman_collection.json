@@ -1,0 +1,312 @@
+{
+  "info": {
+    "_postman_id": "ff571baa-16b4-49c5-b3b2-1a69ba453a4b",
+    "name": "Google Chat customEmojis Google Chat API API",
+    "description": "The Google Chat API enables building Chat apps that integrate with Google Chat. It provides RESTful access to manage spaces, memberships, messages, reactions, media, and custom emojis.\n\nContact Support:\n Name: Google",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:45:15.000Z",
+    "updatedAt": "2026-07-28T01:45:15.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-ff571baa-16b4-49c5-b3b2-1a69ba453a4b"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "{name}",
+          "item": [
+            {
+              "name": "Google Chat Get space",
+              "id": "8f4bb21f-3bd8-4d64-8c15-7993c86a3cbd",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/v1/:name",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    ":name"
+                  ],
+                  "variable": [
+                    {
+                      "id": "d04f7397-19fb-4c25-a688-8bfe6f06130b",
+                      "key": "name",
+                      "value": "<string>",
+                      "description": "(Required) Format: spaces/{space}"
+                    }
+                  ]
+                },
+                "description": "Returns details about a space."
+              },
+              "response": [
+                {
+                  "id": "af689807-0380-4258-b9e0-fa922dc3f97a",
+                  "name": "Successful response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"name\": \"<string>\",\n  \"type\": \"ROOM\",\n  \"singleUserBotDm\": \"<boolean>\",\n  \"displayName\": \"<string>\",\n  \"spaceType\": \"<string>\",\n  \"spaceThreadingState\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:45:15.000Z",
+                  "updatedAt": "2026-07-28T01:45:15.000Z",
+                  "uid": "35240-af689807-0380-4258-b9e0-fa922dc3f97a"
+                }
+              ],
+              "createdAt": "2026-07-28T01:45:15.000Z",
+              "updatedAt": "2026-07-28T01:45:15.000Z",
+              "uid": "35240-8f4bb21f-3bd8-4d64-8c15-7993c86a3cbd"
+            },
+            {
+              "name": "Google Chat Update space",
+              "id": "a2f5eb25-98f5-4ec3-b6fd-2ef48942ae8a",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"ROOM\",\n  \"singleUserBotDm\": \"<boolean>\",\n  \"displayName\": \"<string>\",\n  \"spaceType\": \"<string>\",\n  \"spaceThreadingState\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/v1/:name?updateMask=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    ":name"
+                  ],
+                  "query": [
+                    {
+                      "key": "updateMask",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "9e3cebe6-0fbc-49b9-abfc-882d99d46639",
+                      "key": "name",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "description": "Updates a space."
+              },
+              "response": [
+                {
+                  "id": "e41a7f45-eef0-4ae8-84b3-1796c854e24b",
+                  "name": "Successful response",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"ROOM\",\n  \"singleUserBotDm\": \"<boolean>\",\n  \"displayName\": \"<string>\",\n  \"spaceType\": \"<string>\",\n  \"spaceThreadingState\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/:name?updateMask=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        ":name"
+                      ],
+                      "query": [
+                        {
+                          "key": "updateMask",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"name\": \"<string>\",\n  \"type\": \"ROOM\",\n  \"singleUserBotDm\": \"<boolean>\",\n  \"displayName\": \"<string>\",\n  \"spaceType\": \"<string>\",\n  \"spaceThreadingState\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:45:15.000Z",
+                  "updatedAt": "2026-07-28T01:45:15.000Z",
+                  "uid": "35240-e41a7f45-eef0-4ae8-84b3-1796c854e24b"
+                }
+              ],
+              "createdAt": "2026-07-28T01:45:15.000Z",
+              "updatedAt": "2026-07-28T01:45:15.000Z",
+              "uid": "35240-a2f5eb25-98f5-4ec3-b6fd-2ef48942ae8a"
+            },
+            {
+              "name": "Google Chat Delete space",
+              "id": "083735d5-3a31-4371-869f-d9cd88615a22",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/v1/:name",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    ":name"
+                  ],
+                  "variable": [
+                    {
+                      "id": "7cb788b7-bc3c-4614-ba71-7f942ae5e1d1",
+                      "key": "name",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "description": "Deletes a named space."
+              },
+              "response": [
+                {
+                  "id": "224a697b-90bc-43c9-9d1f-1d84bc9489a5",
+                  "name": "Successful response",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:45:15.000Z",
+                  "updatedAt": "2026-07-28T01:45:15.000Z",
+                  "uid": "35240-224a697b-90bc-43c9-9d1f-1d84bc9489a5"
+                }
+              ],
+              "createdAt": "2026-07-28T01:45:15.000Z",
+              "updatedAt": "2026-07-28T01:45:15.000Z",
+              "uid": "35240-083735d5-3a31-4371-869f-d9cd88615a22"
+            }
+          ],
+          "id": "908a31bd-439f-48bb-b30c-e9170c9a94af",
+          "createdAt": "2026-07-28T01:45:15.000Z",
+          "updatedAt": "2026-07-28T01:45:15.000Z",
+          "uid": "35240-908a31bd-439f-48bb-b30c-e9170c9a94af"
+        }
+      ],
+      "id": "d07547d5-c748-44b6-8286-3b34b0a60d34",
+      "createdAt": "2026-07-28T01:45:15.000Z",
+      "updatedAt": "2026-07-28T01:45:15.000Z",
+      "uid": "35240-d07547d5-c748-44b6-8286-3b34b0a60d34"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://chat.googleapis.com"
+    }
+  ]
+}

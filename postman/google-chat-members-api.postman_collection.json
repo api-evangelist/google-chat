@@ -1,0 +1,265 @@
+{
+  "info": {
+    "_postman_id": "c36f60f2-fc2e-4ea8-9c67-d2a3a90afd44",
+    "name": "Google Chat customEmojis Members API",
+    "description": "The Google Chat API enables building Chat apps that integrate with Google Chat. It provides RESTful access to manage spaces, memberships, messages, reactions, media, and custom emojis.\n\nContact Support:\n Name: Google",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:45:16.000Z",
+    "updatedAt": "2026-07-28T01:45:16.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-c36f60f2-fc2e-4ea8-9c67-d2a3a90afd44"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "{parent}",
+          "item": [
+            {
+              "name": "members",
+              "item": [
+                {
+                  "name": "Google Chat List members",
+                  "id": "a846c5be-ca34-44f5-a10b-b0f3b3795a3b",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/:parent/members?pageSize=<integer>&pageToken=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        ":parent",
+                        "members"
+                      ],
+                      "query": [
+                        {
+                          "key": "pageSize",
+                          "value": "<integer>"
+                        },
+                        {
+                          "key": "pageToken",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "350f0bfe-f59c-4f1c-91e8-7eaac6adfe2e",
+                          "key": "parent",
+                          "value": "<string>",
+                          "description": "(Required) Format: spaces/{space}"
+                        }
+                      ]
+                    },
+                    "description": "Lists memberships in a space."
+                  },
+                  "response": [
+                    {
+                      "id": "805979bd-fc1d-48c3-8319-03b49d1ffb2c",
+                      "name": "Successful response",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/:parent/members?pageSize=<integer>&pageToken=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            ":parent",
+                            "members"
+                          ],
+                          "query": [
+                            {
+                              "key": "pageSize",
+                              "value": "<integer>"
+                            },
+                            {
+                              "key": "pageToken",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "parent"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"memberships\": [\n    {\n      \"name\": \"<string>\",\n      \"state\": \"INVITED\",\n      \"role\": \"ROLE_MEMBER\",\n      \"member\": {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    },\n    {\n      \"name\": \"<string>\",\n      \"state\": \"INVITED\",\n      \"role\": \"MEMBERSHIP_ROLE_UNSPECIFIED\",\n      \"member\": {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T01:45:16.000Z",
+                      "updatedAt": "2026-07-28T01:45:16.000Z",
+                      "uid": "35240-805979bd-fc1d-48c3-8319-03b49d1ffb2c"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:45:16.000Z",
+                  "updatedAt": "2026-07-28T01:45:16.000Z",
+                  "uid": "35240-a846c5be-ca34-44f5-a10b-b0f3b3795a3b"
+                },
+                {
+                  "name": "Google Chat Create member",
+                  "id": "5d78e4e6-8c77-4f8e-a4dd-efb985332d27",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"name\": \"<string>\",\n  \"state\": \"MEMBERSHIP_STATE_UNSPECIFIED\",\n  \"role\": \"ROLE_MANAGER\",\n  \"member\": {\n    \"name\": \"<string>\",\n    \"type\": \"<string>\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/:parent/members",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        ":parent",
+                        "members"
+                      ],
+                      "variable": [
+                        {
+                          "id": "2cd214e1-3226-47e5-aee8-6bf9e28cff3d",
+                          "key": "parent",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Creates a human membership or app membership for a space."
+                  },
+                  "response": [
+                    {
+                      "id": "fb9c601d-adb1-4937-b9f8-0d2e98b7b2a1",
+                      "name": "Successful response",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"state\": \"MEMBERSHIP_STATE_UNSPECIFIED\",\n  \"role\": \"ROLE_MANAGER\",\n  \"member\": {\n    \"name\": \"<string>\",\n    \"type\": \"<string>\"\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/:parent/members",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            ":parent",
+                            "members"
+                          ],
+                          "variable": [
+                            {
+                              "key": "parent"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"name\": \"<string>\",\n  \"state\": \"MEMBERSHIP_STATE_UNSPECIFIED\",\n  \"role\": \"ROLE_MANAGER\",\n  \"member\": {\n    \"name\": \"<string>\",\n    \"type\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-07-28T01:45:16.000Z",
+                      "updatedAt": "2026-07-28T01:45:16.000Z",
+                      "uid": "35240-fb9c601d-adb1-4937-b9f8-0d2e98b7b2a1"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:45:16.000Z",
+                  "updatedAt": "2026-07-28T01:45:16.000Z",
+                  "uid": "35240-5d78e4e6-8c77-4f8e-a4dd-efb985332d27"
+                }
+              ],
+              "id": "1885b164-4f23-4dbd-becc-78339b9ec08e",
+              "createdAt": "2026-07-28T01:45:16.000Z",
+              "updatedAt": "2026-07-28T01:45:16.000Z",
+              "uid": "35240-1885b164-4f23-4dbd-becc-78339b9ec08e"
+            }
+          ],
+          "id": "2a8c0502-0079-4d3a-ab64-089bc03d8b16",
+          "createdAt": "2026-07-28T01:45:16.000Z",
+          "updatedAt": "2026-07-28T01:45:16.000Z",
+          "uid": "35240-2a8c0502-0079-4d3a-ab64-089bc03d8b16"
+        }
+      ],
+      "id": "ebb9517e-16c6-433b-ae5c-02c9e03b5627",
+      "createdAt": "2026-07-28T01:45:16.000Z",
+      "updatedAt": "2026-07-28T01:45:16.000Z",
+      "uid": "35240-ebb9517e-16c6-433b-ae5c-02c9e03b5627"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://chat.googleapis.com"
+    }
+  ]
+}

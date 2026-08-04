@@ -1,0 +1,226 @@
+{
+  "info": {
+    "_postman_id": "33d3b9cb-432d-44c5-adbd-33985d1ea8ba",
+    "name": "Google Chat customEmojis Spaces API",
+    "description": "The Google Chat API enables building Chat apps that integrate with Google Chat. It provides RESTful access to manage spaces, memberships, messages, reactions, media, and custom emojis.\n\nContact Support:\n Name: Google",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:45:49.000Z",
+    "updatedAt": "2026-07-28T01:45:49.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-33d3b9cb-432d-44c5-adbd-33985d1ea8ba"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "spaces",
+          "item": [
+            {
+              "name": "Google Chat List spaces",
+              "id": "b18ddfc2-5cbf-4d55-8112-07dbef9ed307",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/v1/spaces?pageSize=<integer>&pageToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "spaces"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Lists spaces the caller is a member of."
+              },
+              "response": [
+                {
+                  "id": "e0888164-1cd4-4a4a-8b6d-d1f3164a195e",
+                  "name": "Successful response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/spaces?pageSize=<integer>&pageToken=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "spaces"
+                      ],
+                      "query": [
+                        {
+                          "key": "pageSize",
+                          "value": "<integer>"
+                        },
+                        {
+                          "key": "pageToken",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"spaces\": [\n    {\n      \"name\": \"<string>\",\n      \"type\": \"DM\",\n      \"singleUserBotDm\": \"<boolean>\",\n      \"displayName\": \"<string>\",\n      \"spaceType\": \"<string>\",\n      \"spaceThreadingState\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"type\": \"ROOM\",\n      \"singleUserBotDm\": \"<boolean>\",\n      \"displayName\": \"<string>\",\n      \"spaceType\": \"<string>\",\n      \"spaceThreadingState\": \"<string>\"\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:45:50.000Z",
+                  "updatedAt": "2026-07-28T01:45:50.000Z",
+                  "uid": "35240-e0888164-1cd4-4a4a-8b6d-d1f3164a195e"
+                }
+              ],
+              "createdAt": "2026-07-28T01:45:50.000Z",
+              "updatedAt": "2026-07-28T01:45:50.000Z",
+              "uid": "35240-b18ddfc2-5cbf-4d55-8112-07dbef9ed307"
+            },
+            {
+              "name": "Google Chat Create space",
+              "id": "200c4ba8-31a8-4048-ae5a-f3263a9059d9",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"GROUP_CHAT\",\n  \"singleUserBotDm\": \"<boolean>\",\n  \"displayName\": \"<string>\",\n  \"spaceType\": \"<string>\",\n  \"spaceThreadingState\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/v1/spaces",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "spaces"
+                  ]
+                },
+                "description": "Creates a named space."
+              },
+              "response": [
+                {
+                  "id": "2e7e149d-1682-45e5-996a-5cc580126fe2",
+                  "name": "Successful response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"GROUP_CHAT\",\n  \"singleUserBotDm\": \"<boolean>\",\n  \"displayName\": \"<string>\",\n  \"spaceType\": \"<string>\",\n  \"spaceThreadingState\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/spaces",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "spaces"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"name\": \"<string>\",\n  \"type\": \"GROUP_CHAT\",\n  \"singleUserBotDm\": \"<boolean>\",\n  \"displayName\": \"<string>\",\n  \"spaceType\": \"<string>\",\n  \"spaceThreadingState\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:45:50.000Z",
+                  "updatedAt": "2026-07-28T01:45:50.000Z",
+                  "uid": "35240-2e7e149d-1682-45e5-996a-5cc580126fe2"
+                }
+              ],
+              "createdAt": "2026-07-28T01:45:50.000Z",
+              "updatedAt": "2026-07-28T01:45:50.000Z",
+              "uid": "35240-200c4ba8-31a8-4048-ae5a-f3263a9059d9"
+            }
+          ],
+          "id": "9f14793c-b58e-43c4-8693-566a19a87cb0",
+          "createdAt": "2026-07-28T01:45:50.000Z",
+          "updatedAt": "2026-07-28T01:45:50.000Z",
+          "uid": "35240-9f14793c-b58e-43c4-8693-566a19a87cb0"
+        }
+      ],
+      "id": "c909f8f1-536f-4981-b8a0-53a590472309",
+      "createdAt": "2026-07-28T01:45:50.000Z",
+      "updatedAt": "2026-07-28T01:45:50.000Z",
+      "uid": "35240-c909f8f1-536f-4981-b8a0-53a590472309"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://chat.googleapis.com"
+    }
+  ]
+}

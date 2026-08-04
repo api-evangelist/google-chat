@@ -1,0 +1,148 @@
+{
+  "info": {
+    "_postman_id": "005739bd-9ce1-4e71-ad86-a148aafb96b2",
+    "name": "Google Chat customEmojis API",
+    "description": "The Google Chat API enables building Chat apps that integrate with Google Chat. It provides RESTful access to manage spaces, memberships, messages, reactions, media, and custom emojis.\n\nContact Support:\n Name: Google",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:45:14.000Z",
+    "updatedAt": "2026-07-28T01:45:14.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-005739bd-9ce1-4e71-ad86-a148aafb96b2"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "customEmojis",
+          "item": [
+            {
+              "name": "Google Chat List custom emojis",
+              "id": "fdc8bc63-064b-4417-b7be-9967a9592527",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/v1/customEmojis",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "customEmojis"
+                  ]
+                },
+                "description": "Lists custom emojis visible to the authenticated user."
+              },
+              "response": [
+                {
+                  "id": "8d21285f-18c0-4f9e-b8cb-3bfdfdabf649",
+                  "name": "Successful response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/customEmojis",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "customEmojis"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:45:15.000Z",
+                  "updatedAt": "2026-07-28T01:45:15.000Z",
+                  "uid": "35240-8d21285f-18c0-4f9e-b8cb-3bfdfdabf649"
+                }
+              ],
+              "createdAt": "2026-07-28T01:45:14.000Z",
+              "updatedAt": "2026-07-28T01:45:14.000Z",
+              "uid": "35240-fdc8bc63-064b-4417-b7be-9967a9592527"
+            },
+            {
+              "name": "Google Chat Create custom emoji",
+              "id": "e9740499-3c99-4d2d-a43b-d6eedbab67c5",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/v1/customEmojis",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "customEmojis"
+                  ]
+                },
+                "description": "Creates a custom emoji."
+              },
+              "response": [
+                {
+                  "id": "c9e8fd47-ffd0-4245-947e-d95b505550db",
+                  "name": "Successful response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/customEmojis",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "customEmojis"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:45:15.000Z",
+                  "updatedAt": "2026-07-28T01:45:15.000Z",
+                  "uid": "35240-c9e8fd47-ffd0-4245-947e-d95b505550db"
+                }
+              ],
+              "createdAt": "2026-07-28T01:45:14.000Z",
+              "updatedAt": "2026-07-28T01:45:14.000Z",
+              "uid": "35240-e9740499-3c99-4d2d-a43b-d6eedbab67c5"
+            }
+          ],
+          "id": "275cecef-b6a9-4a1a-bed0-b01e97811cc8",
+          "createdAt": "2026-07-28T01:45:14.000Z",
+          "updatedAt": "2026-07-28T01:45:14.000Z",
+          "uid": "35240-275cecef-b6a9-4a1a-bed0-b01e97811cc8"
+        }
+      ],
+      "id": "435474b5-3a3f-412e-9fe1-77b9e4f319cf",
+      "createdAt": "2026-07-28T01:45:14.000Z",
+      "updatedAt": "2026-07-28T01:45:14.000Z",
+      "uid": "35240-435474b5-3a3f-412e-9fe1-77b9e4f319cf"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://chat.googleapis.com"
+    }
+  ]
+}

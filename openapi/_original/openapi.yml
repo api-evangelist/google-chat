@@ -1,0 +1,434 @@
+openapi: 3.1.0
+info:
+  title: Google Chat API
+  description: >-
+    The Google Chat API enables building Chat apps that integrate with Google
+    Chat. It provides RESTful access to manage spaces, memberships, messages,
+    reactions, media, and custom emojis.
+  version: v1
+  contact:
+    name: Google
+    url: https://developers.google.com/workspace/chat/api/guides
+servers:
+  - url: https://chat.googleapis.com
+paths:
+  /v1/spaces:
+    get:
+      operationId: listSpaces
+      summary: Google Chat List spaces
+      description: Lists spaces the caller is a member of.
+      parameters:
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListSpacesResponse'
+      tags:
+        - Spaces
+    post:
+      operationId: createSpace
+      summary: Google Chat Create space
+      description: Creates a named space.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Space'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Space'
+      tags:
+        - Spaces
+  /v1/{name}:
+    get:
+      operationId: getSpace
+      summary: Google Chat Get space
+      description: Returns details about a space.
+      parameters:
+        - name: name
+          in: path
+          required: true
+          description: 'Format: spaces/{space}'
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Space'
+    patch:
+      operationId: updateSpace
+      summary: Google Chat Update space
+      description: Updates a space.
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: updateMask
+          in: query
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Space'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Space'
+    delete:
+      operationId: deleteSpace
+      summary: Google Chat Delete space
+      description: Deletes a named space.
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+  /v1/spaces:setup:
+    post:
+      operationId: setupSpace
+      summary: Google Chat Setup space
+      description: Creates a space and adds specified users to it.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                space:
+                  $ref: '#/components/schemas/Space'
+                memberships:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Membership'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Space'
+      tags:
+        - Spaces:setup
+  /v1/{parent}/members:
+    get:
+      operationId: listMembers
+      summary: Google Chat List members
+      description: Lists memberships in a space.
+      parameters:
+        - name: parent
+          in: path
+          required: true
+          description: 'Format: spaces/{space}'
+          schema:
+            type: string
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListMembershipsResponse'
+      tags:
+        - Members
+    post:
+      operationId: createMember
+      summary: Google Chat Create member
+      description: Creates a human membership or app membership for a space.
+      parameters:
+        - name: parent
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Membership'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Membership'
+      tags:
+        - Members
+  /v1/{parent}/messages:
+    get:
+      operationId: listMessages
+      summary: Google Chat List messages
+      description: Lists messages in a space.
+      parameters:
+        - name: parent
+          in: path
+          required: true
+          description: 'Format: spaces/{space}'
+          schema:
+            type: string
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListMessagesResponse'
+      tags:
+        - Messages
+    post:
+      operationId: createMessage
+      summary: Google Chat Create message
+      description: Creates a message in a Chat space.
+      parameters:
+        - name: parent
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Message'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Message'
+      tags:
+        - Messages
+  /v1/{parent}/reactions:
+    get:
+      operationId: listReactions
+      summary: Google Chat List reactions
+      description: Lists reactions to a message.
+      parameters:
+        - name: parent
+          in: path
+          required: true
+          description: 'Format: spaces/{space}/messages/{message}'
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListReactionsResponse'
+      tags:
+        - Reactions
+    post:
+      operationId: createReaction
+      summary: Google Chat Create reaction
+      description: Creates a reaction on a message.
+      parameters:
+        - name: parent
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Reaction'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Reaction'
+      tags:
+        - Reactions
+  /v1/customEmojis:
+    get:
+      operationId: listCustomEmojis
+      summary: Google Chat List custom emojis
+      description: Lists custom emojis visible to the authenticated user.
+      responses:
+        '200':
+          description: Successful response
+      tags:
+        - customEmojis
+    post:
+      operationId: createCustomEmoji
+      summary: Google Chat Create custom emoji
+      description: Creates a custom emoji.
+      responses:
+        '200':
+          description: Successful response
+      tags:
+        - customEmojis
+components:
+  schemas:
+    Space:
+      type: object
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+          enum: [TYPE_UNSPECIFIED, ROOM, DM, GROUP_CHAT]
+        singleUserBotDm:
+          type: boolean
+        displayName:
+          type: string
+        spaceType:
+          type: string
+        spaceThreadingState:
+          type: string
+    ListSpacesResponse:
+      type: object
+      properties:
+        spaces:
+          type: array
+          items:
+            $ref: '#/components/schemas/Space'
+        nextPageToken:
+          type: string
+    Membership:
+      type: object
+      properties:
+        name:
+          type: string
+        state:
+          type: string
+          enum: [MEMBERSHIP_STATE_UNSPECIFIED, JOINED, INVITED, NOT_A_MEMBER]
+        role:
+          type: string
+          enum: [MEMBERSHIP_ROLE_UNSPECIFIED, ROLE_MEMBER, ROLE_MANAGER]
+        member:
+          type: object
+          properties:
+            name:
+              type: string
+            type:
+              type: string
+    ListMembershipsResponse:
+      type: object
+      properties:
+        memberships:
+          type: array
+          items:
+            $ref: '#/components/schemas/Membership'
+        nextPageToken:
+          type: string
+    Message:
+      type: object
+      properties:
+        name:
+          type: string
+        sender:
+          type: object
+          properties:
+            name:
+              type: string
+            type:
+              type: string
+        createTime:
+          type: string
+          format: date-time
+        text:
+          type: string
+        thread:
+          type: object
+          properties:
+            name:
+              type: string
+        space:
+          $ref: '#/components/schemas/Space'
+    ListMessagesResponse:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/Message'
+        nextPageToken:
+          type: string
+    Reaction:
+      type: object
+      properties:
+        name:
+          type: string
+        user:
+          type: object
+          properties:
+            name:
+              type: string
+            type:
+              type: string
+        emoji:
+          type: object
+          properties:
+            unicode:
+              type: string
+            customEmoji:
+              type: object
+              properties:
+                uid:
+                  type: string
+    ListReactionsResponse:
+      type: object
+      properties:
+        reactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Reaction'
+        nextPageToken:
+          type: string
+tags:
+  - name: customEmojis
+  - name: Members
+  - name: Messages
+  - name: Reactions
+  - name: Spaces
+  - name: Spaces:setup

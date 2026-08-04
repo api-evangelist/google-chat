@@ -1,0 +1,136 @@
+{
+  "info": {
+    "_postman_id": "a8605346-6fbd-45e4-948d-e8c5aac45cae",
+    "name": "Google Chat customEmojis Spaces:setup API",
+    "description": "The Google Chat API enables building Chat apps that integrate with Google Chat. It provides RESTful access to manage spaces, memberships, messages, reactions, media, and custom emojis.\n\nContact Support:\n Name: Google",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:45:50.000Z",
+    "updatedAt": "2026-07-28T01:45:50.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-a8605346-6fbd-45e4-948d-e8c5aac45cae"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "spaces:setup",
+          "item": [
+            {
+              "name": "Google Chat Setup space",
+              "id": "e85dcff1-6f87-4eff-be93-a1a7b88b9206",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"space\": {\n    \"name\": \"<string>\",\n    \"type\": \"GROUP_CHAT\",\n    \"singleUserBotDm\": \"<boolean>\",\n    \"displayName\": \"<string>\",\n    \"spaceType\": \"<string>\",\n    \"spaceThreadingState\": \"<string>\"\n  },\n  \"memberships\": [\n    {\n      \"name\": \"<string>\",\n      \"state\": \"MEMBERSHIP_STATE_UNSPECIFIED\",\n      \"role\": \"MEMBERSHIP_ROLE_UNSPECIFIED\",\n      \"member\": {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    },\n    {\n      \"name\": \"<string>\",\n      \"state\": \"MEMBERSHIP_STATE_UNSPECIFIED\",\n      \"role\": \"ROLE_MANAGER\",\n      \"member\": {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/v1/spaces:setup",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "spaces:setup"
+                  ]
+                },
+                "description": "Creates a space and adds specified users to it."
+              },
+              "response": [
+                {
+                  "id": "7af69ce0-b5b4-4fe1-b18c-5098934ad300",
+                  "name": "Successful response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"space\": {\n    \"name\": \"<string>\",\n    \"type\": \"GROUP_CHAT\",\n    \"singleUserBotDm\": \"<boolean>\",\n    \"displayName\": \"<string>\",\n    \"spaceType\": \"<string>\",\n    \"spaceThreadingState\": \"<string>\"\n  },\n  \"memberships\": [\n    {\n      \"name\": \"<string>\",\n      \"state\": \"MEMBERSHIP_STATE_UNSPECIFIED\",\n      \"role\": \"MEMBERSHIP_ROLE_UNSPECIFIED\",\n      \"member\": {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    },\n    {\n      \"name\": \"<string>\",\n      \"state\": \"MEMBERSHIP_STATE_UNSPECIFIED\",\n      \"role\": \"ROLE_MANAGER\",\n      \"member\": {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/spaces:setup",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "spaces:setup"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"name\": \"<string>\",\n  \"type\": \"DM\",\n  \"singleUserBotDm\": \"<boolean>\",\n  \"displayName\": \"<string>\",\n  \"spaceType\": \"<string>\",\n  \"spaceThreadingState\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:45:50.000Z",
+                  "updatedAt": "2026-07-28T01:45:50.000Z",
+                  "uid": "35240-7af69ce0-b5b4-4fe1-b18c-5098934ad300"
+                }
+              ],
+              "createdAt": "2026-07-28T01:45:50.000Z",
+              "updatedAt": "2026-07-28T01:45:50.000Z",
+              "uid": "35240-e85dcff1-6f87-4eff-be93-a1a7b88b9206"
+            }
+          ],
+          "id": "58402a56-28e6-4815-829c-9b6d94dcdae8",
+          "createdAt": "2026-07-28T01:45:50.000Z",
+          "updatedAt": "2026-07-28T01:45:50.000Z",
+          "uid": "35240-58402a56-28e6-4815-829c-9b6d94dcdae8"
+        }
+      ],
+      "id": "7131e167-cb3b-498e-b593-9fa0925510f6",
+      "createdAt": "2026-07-28T01:45:50.000Z",
+      "updatedAt": "2026-07-28T01:45:50.000Z",
+      "uid": "35240-7131e167-cb3b-498e-b593-9fa0925510f6"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://chat.googleapis.com"
+    }
+  ]
+}
