@@ -1,0 +1,69 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Chat customEmojis Messages API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Messages",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Chat List messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://chat.googleapis.com/v1/:parent/messages",
+            "params": [
+              {
+                "name": "parent",
+                "value": "",
+                "type": "path",
+                "description": "Format: spaces/{space}"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists messages in a space."
+        },
+        {
+          "info": {
+            "name": "Google Chat Create message",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://chat.googleapis.com/v1/:parent/messages",
+            "params": [
+              {
+                "name": "parent",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a message in a Chat space."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

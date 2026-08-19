@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Chat customEmojis Spaces:setup API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Spaces:setup",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Chat Setup space",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://chat.googleapis.com/v1/spaces:setup",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a space and adds specified users to it."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,59 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Chat customEmojis Reactions API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Reactions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Chat List reactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://chat.googleapis.com/v1/:parent/reactions",
+            "params": [
+              {
+                "name": "parent",
+                "value": "",
+                "type": "path",
+                "description": "Format: spaces/{space}/messages/{message}"
+              }
+            ]
+          },
+          "docs": "Lists reactions to a message."
+        },
+        {
+          "info": {
+            "name": "Google Chat Create reaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://chat.googleapis.com/v1/:parent/reactions",
+            "params": [
+              {
+                "name": "parent",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a reaction on a message."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

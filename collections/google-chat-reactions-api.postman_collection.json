@@ -1,0 +1,233 @@
+{
+  "item": [
+    {
+      "id": "b6eee9e1-0eb7-434a-a61a-0c89b798366f",
+      "name": "Reactions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "950c7929-51fb-425c-acf1-77cb6cb7af07",
+          "name": "Google Chat List reactions",
+          "request": {
+            "name": "Google Chat List reactions",
+            "description": {
+              "content": "Lists reactions to a message.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                ":parent",
+                "reactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "parent",
+                  "description": "(Required) Format: spaces/{space}/messages/{message}"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "296cde3a-33e8-41e2-8615-18c176c2af65",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    ":parent",
+                    "reactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "parent",
+                      "description": "(Required) Format: spaces/{space}/messages/{message}"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"reactions\": [\n    {\n      \"name\": \"string\",\n      \"user\": {\n        \"name\": \"string\",\n        \"type\": \"string\"\n      },\n      \"emoji\": {\n        \"unicode\": \"string\",\n        \"customEmoji\": {\n          \"uid\": \"string\"\n        }\n      }\n    },\n    {\n      \"name\": \"string\",\n      \"user\": {\n        \"name\": \"string\",\n        \"type\": \"string\"\n      },\n      \"emoji\": {\n        \"unicode\": \"string\",\n        \"customEmoji\": {\n          \"uid\": \"string\"\n        }\n      }\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "63eb722f-29d4-4027-bb24-3e41a4f3b88d",
+          "name": "Google Chat Create reaction",
+          "request": {
+            "name": "Google Chat Create reaction",
+            "description": {
+              "content": "Creates a reaction on a message.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                ":parent",
+                "reactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "parent",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"user\": {\n    \"name\": \"<string>\",\n    \"type\": \"<string>\"\n  },\n  \"emoji\": {\n    \"unicode\": \"<string>\",\n    \"customEmoji\": {\n      \"uid\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b254e1b0-260c-4e07-a62b-03a2505eba46",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    ":parent",
+                    "reactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "parent",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"user\": {\n    \"name\": \"<string>\",\n    \"type\": \"<string>\"\n  },\n  \"emoji\": {\n    \"unicode\": \"<string>\",\n    \"customEmoji\": {\n      \"uid\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"user\": {\n    \"name\": \"string\",\n    \"type\": \"string\"\n  },\n  \"emoji\": {\n    \"unicode\": \"string\",\n    \"customEmoji\": {\n      \"uid\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://chat.googleapis.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "277fdad4-54e8-4638-b69e-45d93b53e912",
+    "name": "Google Chat customEmojis Reactions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Google Chat API enables building Chat apps that integrate with Google Chat. It provides RESTful access to manage spaces, memberships, messages, reactions, media, and custom emojis.\n\nContact Support:\n Name: Google",
+      "type": "text/plain"
+    }
+  }
+}

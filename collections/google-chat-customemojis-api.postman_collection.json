@@ -1,0 +1,152 @@
+{
+  "item": [
+    {
+      "id": "ade38245-8f9a-4b1c-b0f1-cbb22b97c92c",
+      "name": "customEmojis",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "eb49ec22-1b19-4bf6-9490-1c738b55bc35",
+          "name": "Google Chat List custom emojis",
+          "request": {
+            "name": "Google Chat List custom emojis",
+            "description": {
+              "content": "Lists custom emojis visible to the authenticated user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "customEmojis"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ae505ffa-d109-4d32-97ee-a6b0b1797fa6",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "customEmojis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6254e69b-864f-4f28-ab1e-58186979d505",
+          "name": "Google Chat Create custom emoji",
+          "request": {
+            "name": "Google Chat Create custom emoji",
+            "description": {
+              "content": "Creates a custom emoji.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "customEmojis"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5c050d54-41e8-4255-86cc-df7651e7712c",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "customEmojis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://chat.googleapis.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c139e20a-9f89-4cc0-9855-fcd813bfeca4",
+    "name": "Google Chat customEmojis API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Google Chat API enables building Chat apps that integrate with Google Chat. It provides RESTful access to manage spaces, memberships, messages, reactions, media, and custom emojis.\n\nContact Support:\n Name: Google",
+      "type": "text/plain"
+    }
+  }
+}

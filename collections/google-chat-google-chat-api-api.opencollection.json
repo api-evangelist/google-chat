@@ -1,0 +1,82 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Chat customEmojis Google Chat API API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Google Chat API",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Chat Get space",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://chat.googleapis.com/v1/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Format: spaces/{space}"
+              }
+            ]
+          },
+          "docs": "Returns details about a space."
+        },
+        {
+          "info": {
+            "name": "Google Chat Update space",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://chat.googleapis.com/v1/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "updateMask",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a space."
+        },
+        {
+          "info": {
+            "name": "Google Chat Delete space",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://chat.googleapis.com/v1/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes a named space."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

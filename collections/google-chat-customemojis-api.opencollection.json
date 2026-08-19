@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Chat customEmojis API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "customEmojis",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Chat List custom emojis",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://chat.googleapis.com/v1/customEmojis"
+          },
+          "docs": "Lists custom emojis visible to the authenticated user."
+        },
+        {
+          "info": {
+            "name": "Google Chat Create custom emoji",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://chat.googleapis.com/v1/customEmojis"
+          },
+          "docs": "Creates a custom emoji."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

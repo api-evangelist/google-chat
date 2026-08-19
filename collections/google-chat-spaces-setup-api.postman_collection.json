@@ -1,0 +1,125 @@
+{
+  "item": [
+    {
+      "id": "22e348cf-6e46-424d-b354-ff80aeb37db4",
+      "name": "Spaces:setup",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e1f7cdf2-6b53-44a0-8bbc-3a9cef9dbcf3",
+          "name": "Google Chat Setup space",
+          "request": {
+            "name": "Google Chat Setup space",
+            "description": {
+              "content": "Creates a space and adds specified users to it.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "spaces:setup"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"space\": {\n    \"name\": \"<string>\",\n    \"type\": \"<string>\",\n    \"singleUserBotDm\": \"<boolean>\",\n    \"displayName\": \"<string>\",\n    \"spaceType\": \"<string>\",\n    \"spaceThreadingState\": \"<string>\"\n  },\n  \"memberships\": [\n    {\n      \"name\": \"<string>\",\n      \"state\": \"<string>\",\n      \"role\": \"<string>\",\n      \"member\": {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    },\n    {\n      \"name\": \"<string>\",\n      \"state\": \"<string>\",\n      \"role\": \"<string>\",\n      \"member\": {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c0038543-e5fb-4aa1-83fe-fcb9670e6b87",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "spaces:setup"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"space\": {\n    \"name\": \"string\",\n    \"type\": \"GROUP_CHAT\",\n    \"singleUserBotDm\": true,\n    \"displayName\": \"string\",\n    \"spaceType\": \"string\",\n    \"spaceThreadingState\": \"string\"\n  },\n  \"memberships\": [\n    {\n      \"name\": \"string\",\n      \"state\": \"MEMBERSHIP_STATE_UNSPECIFIED\",\n      \"role\": \"ROLE_MANAGER\",\n      \"member\": {\n        \"name\": \"string\",\n        \"type\": \"string\"\n      }\n    },\n    {\n      \"name\": \"string\",\n      \"state\": \"NOT_A_MEMBER\",\n      \"role\": \"ROLE_MANAGER\",\n      \"member\": {\n        \"name\": \"string\",\n        \"type\": \"string\"\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"type\": \"TYPE_UNSPECIFIED\",\n  \"singleUserBotDm\": true,\n  \"displayName\": \"string\",\n  \"spaceType\": \"string\",\n  \"spaceThreadingState\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://chat.googleapis.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7b275604-2551-40d1-b5e3-f097c9a1ce26",
+    "name": "Google Chat customEmojis Spaces:setup API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Google Chat API enables building Chat apps that integrate with Google Chat. It provides RESTful access to manage spaces, memberships, messages, reactions, media, and custom emojis.\n\nContact Support:\n Name: Google",
+      "type": "text/plain"
+    }
+  }
+}
