@@ -36,6 +36,8 @@ apis:
   humanURL: https://developers.google.com/workspace/chat/api/guides
   baseURL: https://chat.googleapis.com
   tags:
+  - CustomEmojis
+  tags_raw:
   - customEmojis
   properties:
   - type: OpenAPI
@@ -96,6 +98,8 @@ apis:
   humanURL: https://developers.google.com/workspace/chat/api/guides
   baseURL: https://chat.googleapis.com
   tags:
+  - Message
+  tags_raw:
   - Messages
   properties:
   - type: OpenAPI
