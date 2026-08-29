@@ -4,6 +4,18 @@ description: >-
   The Google Chat API enables building Chat apps that integrate with Google Chat. It provides RESTful access to manage
   Chat spaces, memberships, messages, reactions, attachments, and custom emojis. The API supports creating
   conversational bots, automating messaging workflows, and managing organizational chat resources programmatically.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
