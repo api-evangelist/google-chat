@@ -47,7 +47,8 @@ apis:
   description: The customEmojis API from Google Chat — 1 operation(s) for customemojis.
   humanURL: https://developers.google.com/workspace/chat/api/guides
   baseURL: https://chat.googleapis.com
-  tags: []
+  tags:
+  - CustomEmojis
   tags_raw:
   - customEmojis
   properties:
