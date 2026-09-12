@@ -187,6 +187,8 @@ apis:
   - type: JSONLD
     url: json-ld/json-ld.jsonld
 common:
+  - type: Website
+    url: https://www.google.com/
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/google-chat/overview
   - type: AgenticAccess
@@ -220,3 +222,5 @@ common:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-parent: google
+x-relationship: product
