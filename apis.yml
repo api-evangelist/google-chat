@@ -42,28 +42,6 @@ tags:
 - Messaging
 - Spaces
 apis:
-- aid: google-chat:google-chat-customemojis-api
-  name: Google Chat customEmojis API
-  description: The customEmojis API from Google Chat — 1 operation(s) for customemojis.
-  humanURL: https://developers.google.com/workspace/chat/api/guides
-  baseURL: https://chat.googleapis.com
-  tags:
-  - CustomEmojis
-  tags_raw:
-  - customEmojis
-  properties:
-  - type: OpenAPI
-    url: openapi/google-chat-customemojis-api-openapi.yml
-  - type: Documentation
-    url: https://developers.google.com/workspace/chat/api/guides
-  - type: Authentication
-    url: https://developers.google.com/workspace/chat/authenticate-authorize
-  - type: GettingStarted
-    url: https://developers.google.com/workspace/chat/quickstart/apps-script
-  - type: JSONSchema
-    url: json-schema/json-schema.yml
-  - type: JSONLD
-    url: json-ld/json-ld.jsonld
 - aid: google-chat:google-chat-google-chat-api-api
   name: Google Chat Google Chat API
   description: The Google Chat API API from Google Chat — 1 operation(s) for google chat api.
@@ -176,6 +154,26 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/google-chat-spaces-setup-api-openapi.yml
+  - type: Documentation
+    url: https://developers.google.com/workspace/chat/api/guides
+  - type: Authentication
+    url: https://developers.google.com/workspace/chat/authenticate-authorize
+  - type: GettingStarted
+    url: https://developers.google.com/workspace/chat/quickstart/apps-script
+  - type: JSONSchema
+    url: json-schema/json-schema.yml
+  - type: JSONLD
+    url: json-ld/json-ld.jsonld
+- aid: google-chat:google-chat-custom-emojis-api
+  name: Google Chat Custom Emojis API
+  description: The Custom Emojis API from Google Chat — 1 operation(s) for custom emojis.
+  humanURL: https://developers.google.com/workspace/chat/api/guides
+  baseURL: https://chat.googleapis.com
+  tags:
+  - Custom Emojis
+  properties:
+  - type: OpenAPI
+    url: openapi/google-chat-custom-emojis-api-openapi.yml
   - type: Documentation
     url: https://developers.google.com/workspace/chat/api/guides
   - type: Authentication
