@@ -40,6 +40,13 @@ tags:
 - Google
 - Google Workspace
 - Messaging
+- Space
+tags_raw:
+- Chat
+- Collaboration
+- Google
+- Google Workspace
+- Messaging
 - Spaces
 apis:
 - aid: google-chat:google-chat-google-chat-api-api
@@ -130,6 +137,8 @@ apis:
   humanURL: https://developers.google.com/workspace/chat/api/guides
   baseURL: https://chat.googleapis.com
   tags:
+  - Space
+  tags_raw:
   - Spaces
   properties:
   - type: OpenAPI
