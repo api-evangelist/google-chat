@@ -1,35 +1,39 @@
 {
   "provider": "google-chat",
   "sources": [
-    "google-chat-customemojis-api-openapi.yml",
-    "google-chat-google-chat-api-api-openapi.yml",
-    "google-chat-members-api-openapi.yml",
-    "google-chat-messages-api-openapi.yml",
-    "google-chat-reactions-api-openapi.yml",
-    "google-chat-spaces-api-openapi.yml",
-    "google-chat-spaces-setup-api-openapi.yml"
+    "_original/openapi.yml"
   ],
   "outputs": [
-    "google-chat-customemojis-api-openapi.yml",
     "google-chat-google-chat-api-api-openapi.yml",
     "google-chat-members-api-openapi.yml",
     "google-chat-messages-api-openapi.yml",
     "google-chat-reactions-api-openapi.yml",
     "google-chat-spaces-api-openapi.yml",
-    "google-chat-spaces-setup-api-openapi.yml"
+    "google-chat-spaces-setup-api-openapi.yml",
+    "google-chat-customemojis-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
   "notes": [
-    "google-chat-customemojis-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-chat-google-chat-api-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-chat-members-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-chat-messages-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-chat-reactions-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-chat-spaces-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-chat-spaces-setup-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "apis.yml register: already-registered"
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "openapi.yml: tagged paths GET /v1/{name} -> Google Chat API",
+    "openapi.yml: tagged paths PATCH /v1/{name} -> Google Chat API",
+    "openapi.yml: tagged paths DELETE /v1/{name} -> Google Chat API",
+    "openapi.yml: declared missing tag: Google Chat API",
+    "superseded outputs removed: google-chat-custom-emojis-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 7 total)"
   ],
-  "skipped": []
+  "skipped": [
+    "google-chat-custom-emojis-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-chat-google-chat-api-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-chat-members-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-chat-messages-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-chat-reactions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-chat-spaces-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-chat-spaces-setup-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

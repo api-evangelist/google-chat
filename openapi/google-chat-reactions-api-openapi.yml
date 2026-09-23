@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google Chat customEmojis Reactions API
+  title: Google Chat Reactions API
   description: The Google Chat API enables building Chat apps that integrate with Google Chat. It provides RESTful access to manage spaces, memberships, messages, reactions, media, and custom emojis.
   version: v1
   contact:
@@ -58,15 +58,6 @@ paths:
       - Reactions
 components:
   schemas:
-    ListReactionsResponse:
-      type: object
-      properties:
-        reactions:
-          type: array
-          items:
-            $ref: '#/components/schemas/Reaction'
-        nextPageToken:
-          type: string
     Reaction:
       type: object
       properties:
@@ -89,3 +80,12 @@ components:
               properties:
                 uid:
                   type: string
+    ListReactionsResponse:
+      type: object
+      properties:
+        reactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Reaction'
+        nextPageToken:
+          type: string

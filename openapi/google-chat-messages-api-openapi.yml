@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google Chat customEmojis Messages API
+  title: Google Chat Messages API
   description: The Google Chat API enables building Chat apps that integrate with Google Chat. It provides RESTful access to manage spaces, memberships, messages, reactions, media, and custom emojis.
   version: v1
   contact:
@@ -66,6 +66,26 @@ paths:
       - Messages
 components:
   schemas:
+    Space:
+      type: object
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+          enum:
+          - TYPE_UNSPECIFIED
+          - ROOM
+          - DM
+          - GROUP_CHAT
+        singleUserBotDm:
+          type: boolean
+        displayName:
+          type: string
+        spaceType:
+          type: string
+        spaceThreadingState:
+          type: string
     Message:
       type: object
       properties:
@@ -98,24 +118,4 @@ components:
           items:
             $ref: '#/components/schemas/Message'
         nextPageToken:
-          type: string
-    Space:
-      type: object
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-          enum:
-          - TYPE_UNSPECIFIED
-          - ROOM
-          - DM
-          - GROUP_CHAT
-        singleUserBotDm:
-          type: boolean
-        displayName:
-          type: string
-        spaceType:
-          type: string
-        spaceThreadingState:
           type: string

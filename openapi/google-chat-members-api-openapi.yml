@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google Chat customEmojis Members API
+  title: Google Chat Members API
   description: The Google Chat API enables building Chat apps that integrate with Google Chat. It provides RESTful access to manage spaces, memberships, messages, reactions, media, and custom emojis.
   version: v1
   contact:
@@ -66,15 +66,6 @@ paths:
       - Members
 components:
   schemas:
-    ListMembershipsResponse:
-      type: object
-      properties:
-        memberships:
-          type: array
-          items:
-            $ref: '#/components/schemas/Membership'
-        nextPageToken:
-          type: string
     Membership:
       type: object
       properties:
@@ -100,3 +91,12 @@ components:
               type: string
             type:
               type: string
+    ListMembershipsResponse:
+      type: object
+      properties:
+        memberships:
+          type: array
+          items:
+            $ref: '#/components/schemas/Membership'
+        nextPageToken:
+          type: string
