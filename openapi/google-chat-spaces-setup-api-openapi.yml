@@ -39,6 +39,26 @@ paths:
       - Spaces:setup
 components:
   schemas:
+    Space:
+      type: object
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+          enum:
+          - TYPE_UNSPECIFIED
+          - ROOM
+          - DM
+          - GROUP_CHAT
+        singleUserBotDm:
+          type: boolean
+        displayName:
+          type: string
+        spaceType:
+          type: string
+        spaceThreadingState:
+          type: string
     Membership:
       type: object
       properties:
@@ -64,23 +84,3 @@ components:
               type: string
             type:
               type: string
-    Space:
-      type: object
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-          enum:
-          - TYPE_UNSPECIFIED
-          - ROOM
-          - DM
-          - GROUP_CHAT
-        singleUserBotDm:
-          type: boolean
-        displayName:
-          type: string
-        spaceType:
-          type: string
-        spaceThreadingState:
-          type: string

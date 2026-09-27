@@ -86,6 +86,15 @@ components:
           type: string
         spaceThreadingState:
           type: string
+    ListMessagesResponse:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/Message'
+        nextPageToken:
+          type: string
     Message:
       type: object
       properties:
@@ -110,12 +119,3 @@ components:
               type: string
         space:
           $ref: '#/components/schemas/Space'
-    ListMessagesResponse:
-      type: object
-      properties:
-        messages:
-          type: array
-          items:
-            $ref: '#/components/schemas/Message'
-        nextPageToken:
-          type: string

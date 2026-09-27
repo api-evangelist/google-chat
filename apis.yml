@@ -40,7 +40,7 @@ tags:
 - Google
 - Google Workspace
 - Messaging
-- Space
+- Spaces
 tags_raw:
 - Chat
 - Collaboration
@@ -137,7 +137,7 @@ apis:
   humanURL: https://developers.google.com/workspace/chat/api/guides
   baseURL: https://chat.googleapis.com
   tags:
-  - Space
+  - Spaces
   tags_raw:
   - Spaces
   properties:
@@ -231,3 +231,5 @@ maintainers:
   email: kin@apievangelist.com
 x-parent: google
 x-relationship: product
+x-tags-removed:
+- Space
