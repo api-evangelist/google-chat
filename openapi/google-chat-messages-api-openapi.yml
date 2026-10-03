@@ -66,6 +66,30 @@ paths:
       - Messages
 components:
   schemas:
+    Message:
+      type: object
+      properties:
+        name:
+          type: string
+        sender:
+          type: object
+          properties:
+            name:
+              type: string
+            type:
+              type: string
+        createTime:
+          type: string
+          format: date-time
+        text:
+          type: string
+        thread:
+          type: object
+          properties:
+            name:
+              type: string
+        space:
+          $ref: '#/components/schemas/Space'
     Space:
       type: object
       properties:
@@ -95,27 +119,3 @@ components:
             $ref: '#/components/schemas/Message'
         nextPageToken:
           type: string
-    Message:
-      type: object
-      properties:
-        name:
-          type: string
-        sender:
-          type: object
-          properties:
-            name:
-              type: string
-            type:
-              type: string
-        createTime:
-          type: string
-          format: date-time
-        text:
-          type: string
-        thread:
-          type: object
-          properties:
-            name:
-              type: string
-        space:
-          $ref: '#/components/schemas/Space'
