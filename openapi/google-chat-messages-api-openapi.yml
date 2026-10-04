@@ -66,6 +66,15 @@ paths:
       - Messages
 components:
   schemas:
+    ListMessagesResponse:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/Message'
+        nextPageToken:
+          type: string
     Message:
       type: object
       properties:
@@ -109,13 +118,4 @@ components:
         spaceType:
           type: string
         spaceThreadingState:
-          type: string
-    ListMessagesResponse:
-      type: object
-      properties:
-        messages:
-          type: array
-          items:
-            $ref: '#/components/schemas/Message'
-        nextPageToken:
           type: string

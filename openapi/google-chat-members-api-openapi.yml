@@ -66,6 +66,15 @@ paths:
       - Members
 components:
   schemas:
+    ListMembershipsResponse:
+      type: object
+      properties:
+        memberships:
+          type: array
+          items:
+            $ref: '#/components/schemas/Membership'
+        nextPageToken:
+          type: string
     Membership:
       type: object
       properties:
@@ -91,12 +100,3 @@ components:
               type: string
             type:
               type: string
-    ListMembershipsResponse:
-      type: object
-      properties:
-        memberships:
-          type: array
-          items:
-            $ref: '#/components/schemas/Membership'
-        nextPageToken:
-          type: string

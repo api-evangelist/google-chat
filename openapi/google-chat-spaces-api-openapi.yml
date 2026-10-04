@@ -54,15 +54,6 @@ paths:
       - Spaces
 components:
   schemas:
-    ListSpacesResponse:
-      type: object
-      properties:
-        spaces:
-          type: array
-          items:
-            $ref: '#/components/schemas/Space'
-        nextPageToken:
-          type: string
     Space:
       type: object
       properties:
@@ -82,4 +73,13 @@ components:
         spaceType:
           type: string
         spaceThreadingState:
+          type: string
+    ListSpacesResponse:
+      type: object
+      properties:
+        spaces:
+          type: array
+          items:
+            $ref: '#/components/schemas/Space'
+        nextPageToken:
           type: string
