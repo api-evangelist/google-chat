@@ -66,14 +66,25 @@ paths:
       - Messages
 components:
   schemas:
-    ListMessagesResponse:
+    Space:
       type: object
       properties:
-        messages:
-          type: array
-          items:
-            $ref: '#/components/schemas/Message'
-        nextPageToken:
+        name:
+          type: string
+        type:
+          type: string
+          enum:
+          - TYPE_UNSPECIFIED
+          - ROOM
+          - DM
+          - GROUP_CHAT
+        singleUserBotDm:
+          type: boolean
+        displayName:
+          type: string
+        spaceType:
+          type: string
+        spaceThreadingState:
           type: string
     Message:
       type: object
@@ -99,23 +110,12 @@ components:
               type: string
         space:
           $ref: '#/components/schemas/Space'
-    Space:
+    ListMessagesResponse:
       type: object
       properties:
-        name:
-          type: string
-        type:
-          type: string
-          enum:
-          - TYPE_UNSPECIFIED
-          - ROOM
-          - DM
-          - GROUP_CHAT
-        singleUserBotDm:
-          type: boolean
-        displayName:
-          type: string
-        spaceType:
-          type: string
-        spaceThreadingState:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/Message'
+        nextPageToken:
           type: string

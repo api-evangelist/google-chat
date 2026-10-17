@@ -58,6 +58,15 @@ paths:
       - Reactions
 components:
   schemas:
+    ListReactionsResponse:
+      type: object
+      properties:
+        reactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Reaction'
+        nextPageToken:
+          type: string
     Reaction:
       type: object
       properties:
@@ -80,12 +89,3 @@ components:
               properties:
                 uid:
                   type: string
-    ListReactionsResponse:
-      type: object
-      properties:
-        reactions:
-          type: array
-          items:
-            $ref: '#/components/schemas/Reaction'
-        nextPageToken:
-          type: string
