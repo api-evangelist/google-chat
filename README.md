@@ -1,4 +1,4 @@
-# Google Chat (google-chat)
+# Google Chat
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,68 +66,154 @@
 
 The Google Chat API enables building Chat apps that integrate with Google Chat. It provides RESTful access to manage Chat spaces, memberships, messages, reactions, attachments, and custom emojis. The API supports creating conversational bots, automating messaging workflows, and managing organizational chat resources programmatically.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/google-chat/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/google-chat/refs/heads/main/apis.yml)
+**Areas:** Chat · Collaboration · Google · Google Workspace · Messaging · Spaces
 
-## Scope
+## Google Chat on APIs.io
 
-- **Type:** Index
+Everything profiled for Google Chat is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/google-chat/](https://apis.io/providers/google-chat/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (7)
 
-- Chat
-- Collaboration
-- Google
-- Google Workspace
-- Messaging
-- Spaces
+- [Google Chat Google Chat API](https://apis.io/apis/google-chat/google-chat-google-chat-api-api/) — The Google Chat API API from Google Chat — 1 operation(s) for google chat api.
+- [Google Chat Members API](https://apis.io/apis/google-chat/google-chat-members-api/) — The Members API from Google Chat — 1 operation(s) for members.
+- [Google Chat Messages API](https://apis.io/apis/google-chat/google-chat-messages-api/) — The Messages API from Google Chat — 1 operation(s) for messages.
+- [Google Chat Reactions API](https://apis.io/apis/google-chat/google-chat-reactions-api/) — The Reactions API from Google Chat — 1 operation(s) for reactions.
+- [Google Chat Spaces API](https://apis.io/apis/google-chat/google-chat-spaces-api/) — The Spaces API from Google Chat — 1 operation(s) for spaces.
+- [Google Chat Spaces:setup API](https://apis.io/apis/google-chat/google-chat-spaces-setup-api/) — The Spaces:setup API from Google Chat — 1 operation(s) for spaces:setup.
+- [Google Chat Custom Emojis API](https://apis.io/apis/google-chat/google-chat-custom-emojis-api/) — The Custom Emojis API from Google Chat — 1 operation(s) for custom emojis.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-13
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Google Chat API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Google Chat API provides programmatic access to Google Chat, enabling management of spaces, members, messages, reactions, media attachments, custom emojis, and user notification settings.
+- [Google Chat Agentic Access](https://apis.io/agentic-access/google-chat/google-chat-agentic-access/)
 
-- **Human URL:** [https://developers.google.com/workspace/chat/api/guides](https://developers.google.com/workspace/chat/api/guides)
-- **Base URL:** `https://chat.googleapis.com`
+#### JSON-LD (1)
 
-#### Tags
+Linked-data contexts for the provider's vocabulary.
 
-- Chat
-- Collaboration
-- Messaging
-- Spaces
+- [Json Ld Context](https://apis.io/jsonld/google-chat/json-ld/)
 
-#### Properties
+#### Collections (15)
 
-- [Documentation](https://developers.google.com/workspace/chat/api/guides)
-- [OpenAPI](openapi/openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/openapi.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/openapi.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Authentication](https://developers.google.com/workspace/chat/authenticate-authorize)
-- [Getting Started](https://developers.google.com/workspace/chat/quickstart/apps-script)
-- [JSON Schema](json-schema/json-schema.yml) — [JSON Schema](https://json-schema.org/specification)
-- [JSON-LD](json-ld/json-ld.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
+Postman and Open Collection request collections.
 
-## Common Properties
+- [Google Chat customEmojis API](https://apis.io/collections/google-chat/open-google-chat-customemojis-api/)
+- [Google Chat customEmojis Google Chat API API](https://apis.io/collections/google-chat/open-google-chat-google-chat-api-api/)
+- [Google Chat customEmojis Members API](https://apis.io/collections/google-chat/open-google-chat-members-api/)
+- [Google Chat customEmojis Messages API](https://apis.io/collections/google-chat/open-google-chat-messages-api/)
+- [Google Chat customEmojis Reactions API](https://apis.io/collections/google-chat/open-google-chat-reactions-api/)
+- [Google Chat customEmojis Spaces API](https://apis.io/collections/google-chat/open-google-chat-spaces-api/)
+- [Google Chat customEmojis Spaces:setup API](https://apis.io/collections/google-chat/open-google-chat-spaces-setup-api/)
+- [Google Chat API](https://apis.io/collections/google-chat/open-openapi/)
+- [Google Chat customEmojis API](https://apis.io/collections/google-chat/postman-google-chat-customemojis-api/)
+- [Google Chat customEmojis Google Chat API API](https://apis.io/collections/google-chat/postman-google-chat-google-chat-api-api/)
+- [Google Chat customEmojis Members API](https://apis.io/collections/google-chat/postman-google-chat-members-api/)
+- [Google Chat customEmojis Messages API](https://apis.io/collections/google-chat/postman-google-chat-messages-api/)
+- [Google Chat customEmojis Reactions API](https://apis.io/collections/google-chat/postman-google-chat-reactions-api/)
+- [Google Chat customEmojis Spaces API](https://apis.io/collections/google-chat/postman-google-chat-spaces-api/)
+- [Google Chat customEmojis Spaces:setup API](https://apis.io/collections/google-chat/postman-google-chat-spaces-setup-api/)
 
-- [GitHub Organization](https://github.com/googleworkspace)
-- [Portal](https://developers.google.com/workspace/chat)
-- [Getting Started](https://developers.google.com/workspace/chat/api/guides)
-- [Authentication](https://developers.google.com/identity/protocols/oauth2)
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Google Chat — jsonschema rules](https://apis.io/rules/google-chat/google-chat-jsonschema-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Google Chat Domain Security](https://apis.io/security/google-chat/google-chat-domain-security/)
+- [Google Chat Vulnerability Disclosure](https://apis.io/security/google-chat/google-chat-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Google Chat Plans Pricing](https://apis.io/plans/google-chat/google-chat-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Google Chat Rate Limits](https://apis.io/rate-limits/google-chat/google-chat-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Google Chat Finops](https://apis.io/finops/google-chat/google-chat-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.google.com/)
+- [Getting started](https://developers.google.com/workspace/chat/api/guides)
 - [Pricing](https://workspace.google.com/pricing)
-- [Terms of Service](https://developers.google.com/terms)
-- [Privacy Policy](https://policies.google.com/privacy)
-- [Status Page](https://www.google.com/appsstatus/dashboard/)
 - [Support](https://developers.google.com/workspace/chat/support)
 - [Blog](https://workspaceupdates.googleblog.com/)
-- [JSON-LD](json-ld/json-ld.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
+- [Terms of service](https://developers.google.com/terms)
+- [Privacy policy](https://policies.google.com/privacy)
+- [GitHub](https://github.com/googleworkspace)
+- [Status](https://www.google.com/appsstatus/dashboard/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 45.2** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 51.8 |
+| Contract governance | 9.8 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 51.2 |
+| Access clarity | 39.5 |
+
+**Agent readiness 19.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 30.4** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/google-chat/](https://apis.io/providers/google-chat/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Google Chat: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/google-chat/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
